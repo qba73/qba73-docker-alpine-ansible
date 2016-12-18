@@ -1,0 +1,4 @@
+requests==2.12.4
+ansible==2.2.0
+pysphere==0.1.7
+pyvmomi==6.5

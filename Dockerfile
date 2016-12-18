@@ -1,6 +1,8 @@
 FROM alpine
 MAINTAINER Jakub Jarosz "jakub.jarosz@postpro.net"
 
+ADD ./requirements.txt requirements.txt
+
 RUN apk update && apk add \
   bash \
   python \
@@ -14,6 +16,5 @@ RUN apk update && apk add \
   py-cryptography \
   py-pip \
   && pip install -U pip \
-  && pip install -U ansible \
+  && pip install -r requirements.txt \
   && rm -rf /var/cache/apk/*
-
