@@ -1,0 +1,13 @@
+# circle.yml
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+	- docker build--rm=false -t qba73/docker-ansible .
+
+test:
+  override:
+    - docker run -it --rm --name ansible qba73/docker-ansible ansible --version
